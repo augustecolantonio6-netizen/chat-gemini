@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <symbol id="compose" viewBox="0 0 24 24"><path d="M12 4H6a3 3 0 0 0-3 3v11a3 3 0 0 0 3 3h11a3 3 0 0 0 3-3v-6"/><path d="m14.8 5.2 4 4m-9.5 5.5-1 4 4.1-1 9-9a2.8 2.8 0 0 0-4-4Z" transform="translate(0 -1)"/></symbol>
+    <symbol id="panel" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M9 4v16"/></symbol>
+    <symbol id="menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h12"/></symbol>
+    <symbol id="search" viewBox="0 0 24 24"><circle cx="10.6" cy="10.6" r="6.6"/><path d="m16 16 4.6 4.6"/></symbol>
+    <symbol id="chat" viewBox="0 0 24 24"><path d="M20.5 11.8a8.3 8.3 0 0 1-8.6 8.1 9 9 0 0 1-3.7-.8L3 20.5l1.5-4.7a7.6 7.6 0 0 1-1.2-4 8.3 8.3 0 0 1 8.6-8.1 8.3 8.3 0 0 1 8.6 8.1Z"/></symbol>
+    <symbol id="work" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="3"/><path d="M8.5 7V5.5a1.5 1.5 0 0 1 1.5-1.5h4a1.5 1.5 0 0 1 1.5 1.5V7M3 12a23 23 0 0 0 18 0M10.5 13.5h3"/></symbol>
+    <symbol id="key" viewBox="0 0 24 24"><circle cx="8.4" cy="14.6" r="4.5"/><path d="m11.8 11.3 8.3-8.4m-3.4 3.5 2.6 2.5m-5.2.1 1.9 1.9"/><circle cx="7.2" cy="15.7" r=".6" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="settings" viewBox="0 0 24 24"><path d="m9.9 3-.5 2a7 7 0 0 0-1.8 1L5.7 5.4l-2.1 3.4 1.5 1.5a7 7 0 0 0 0 2.6l-1.5 1.5 2.1 3.5 1.9-.6a7 7 0 0 0 1.8 1l.5 2.1h4.2l.5-2.1a7 7 0 0 0 1.8-1l1.9.6 2.1-3.5-1.5-1.5a7 7 0 0 0 0-2.6l1.5-1.5-2.1-3.4-1.9.6a7 7 0 0 0-1.8-1l-.5-2Z"/><circle cx="12" cy="11.7" r="3.1"/></symbol>
+    <symbol id="history" viewBox="0 0 24 24"><path d="M3.9 11a8.2 8.2 0 1 1 .8 5m-.9-11v5H9"/><path d="M12 7.7V12l3 1.8"/></symbol>
+    <symbol id="up" viewBox="0 0 24 24"><path d="M12 19V5m-6.3 6.3L12 5l6.3 6.3"/></symbol>
+    <symbol id="up-right" viewBox="0 0 24 24"><path d="M6 18 18 6M7.5 6H18v10.5"/></symbol>
+    <symbol id="down" viewBox="0 0 24 24"><path d="m6.5 9.5 5.5 5.5 5.5-5.5"/></symbol>
+    <symbol id="clip" viewBox="0 0 24 24"><path d="m9 12.5 6.3-6.3a2.8 2.8 0 0 1 4 4l-8.5 8.5a4.8 4.8 0 0 1-6.8-6.8l8.1-8.1M7 14.4l7.8-7.8"/></symbol>
+    <symbol id="plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="12" rx="3"/><path d="M5.6 10.8v1.1a6.4 6.4 0 0 0 12.8 0v-1.1M12 18.4V21"/></symbol>
+    <symbol id="wave" viewBox="0 0 24 24"><path d="M3 10v4m4-7v10m5-14v18m5-15v12m4-8v4"/></symbol>
+    <symbol id="spark" viewBox="0 0 24 24"><path d="M12 2.7c1.4 6.2 3.1 7.9 9.3 9.3-6.2 1.4-7.9 3.1-9.3 9.3-1.4-6.2-3.1-7.9-9.3-9.3 6.2-1.4 7.9-3.1 9.3-9.3Z"/></symbol>
+    <symbol id="bulb" viewBox="0 0 24 24"><path d="M8.5 17a6.5 6.5 0 1 1 7 0M9.3 17h5.4m-4.8 3.3h4.2"/><path d="M10 7.3a3.5 3.5 0 0 0-1.8 2"/></symbol>
+    <symbol id="code" viewBox="0 0 24 24"><path d="M7.3 7.5 2.8 12l4.5 4.5m9.4-9 4.5 4.5-4.5 4.5M14 4.8l-4 14.4"/></symbol>
+    <symbol id="pen" viewBox="0 0 24 24"><path d="m14.6 5.1 4.3 4.3M4 20l4.9-1.1L20.6 7.2a1.9 1.9 0 0 0 0-2.7l-1.2-1.2a1.9 1.9 0 0 0-2.7 0L5 15Z"/></symbol>
+    <symbol id="layers" viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5Zm-9 9 9 5 9-5M3 16l9 5 9-5"/></symbol>
+    <symbol id="check" viewBox="0 0 24 24"><path d="m4.5 12 5 5 10-10"/></symbol>
+    <symbol id="x" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+    <symbol id="eye" viewBox="0 0 24 24"><path d="M2.5 12S6 5.5 12 5.5s9.5 6.5 9.5 6.5-3.5 6.5-9.5 6.5S2.5 12 2.5 12Z"/><circle cx="12" cy="12" r="2.5"/></symbol>
+    <symbol id="eye-off" viewBox="0 0 24 24"><path d="m3 3 18 18M6 6.5a19 19 0 0 0-3.5 5.5s3.5 6.5 9.5 6.5c1.7 0 3.2-.5 4.6-1.2M9.3 5.9a10 10 0 0 1 2.7-.4c6 0 9.5 6.5 9.5 6.5s-.9 1.7-2.6 3.3"/></symbol>
+    <symbol id="copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="13" rx="2.5"/><path d="M15.8 8V5.5A2.5 2.5 0 0 0 13.3 3H5.5A2.5 2.5 0 0 0 3 5.5v9A2.5 2.5 0 0 0 5.5 17H8"/></symbol>
+    <symbol id="retry" viewBox="0 0 24 24"><path d="M3.6 11a8.5 8.5 0 1 1 1.3 6M3.6 5v6h6"/></symbol>
+    <symbol id="lock" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="2.8"/><path d="M8 10V7a4 4 0 0 1 8 0v3m-4 4.5v2"/></symbol>
+    <symbol id="file" viewBox="0 0 24 24"><path d="M6.5 3H14l5 5v11.5a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 5 19.5v-15A1.5 1.5 0 0 1 6.5 3Z"/><path d="M13.5 3.5V9H19M8 14h8"/></symbol>
+    <symbol id="trash" viewBox="0 0 24 24"><path d="M4 7h16M9 7V4.5h6V7M6 7l1 13h10l1-13M10 10.5v6m4-6v6"/></symbol>
+    <symbol id="stop" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="warning" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v6m0 3.5h.01"/></symbol>
+    <symbol id="enter" viewBox="0 0 24 24"><path d="M20 5v7a2 2 0 0 1-2 2H4m4-4-4 4 4 4"/></symbol>
+  </defs>
+</svg>

@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f9f9fc">
+  <meta name="description" content="Chat Gemini, ton espace personnel pour discuter et travailler avec Gemini.">
+  <title>Chat Gemini</title>
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/assets/dm-sans.woff" as="font" type="font/woff" crossorigin>
+  <link rel="stylesheet" href="/styles.css">
+  <script type="module" src="/app.js"></script>
+</head>
+<body>
+  <div class="workspace" id="workspace">
+    <button class="scrim" id="scrim" type="button" aria-label="Fermer le menu" tabindex="-1" hidden></button>
+    <aside class="sidebar" id="sidebar" aria-label="Barre latérale">
+      <div class="brand-row">
+        <button class="brand" id="brand" type="button" aria-label="Chat Gemini, nouvelle discussion">
+          <img src="/assets/favicon.svg" width="33" height="33" alt="">
+          <span>Chat Gemini</span>
+        </button>
+        <button id="collapse" class="icon-button collapse" type="button" aria-label="Réduire la barre latérale" title="Réduire la barre latérale"><span data-i="panel"></span></button>
+      </div>
+      <nav class="main-nav" aria-label="Discussions">
+        <button id="new-chat" class="nav-item new-chat" type="button" title="Nouvelle discussion"><span data-i="compose"></span><span class="nav-label">Nouvelle discussion</span><span class="nav-plus" aria-hidden="true">+</span></button>
+        <button id="search" class="nav-item" type="button" title="Rechercher"><span data-i="search"></span><span class="nav-label">Rechercher</span><kbd class="shortcut" id="keyhint">Ctrl K</kbd></button>
+      </nav>
+      <section class="history" aria-labelledby="history-title">
+        <h2 id="history-title">Historique</h2>
+        <div id="history-list"></div>
+        <div id="history-empty" class="history-empty"><p>Tes discussions apparaîtront ici.</p></div>
+      </section>
+      <div class="side-bottom">
+        <button id="settings" class="nav-item settings-link" type="button" title="Paramètres"><span data-i="settings"></span><span class="nav-label">Paramètres</span></button>
+        <div class="profile">
+          <div class="avatar">A</div>
+          <div class="profile-text"><strong>Auguste</strong><span>Espace personnel</span></div>
+          <span class="profile-lock" data-i="lock" title="Historique sur cet appareil"></span>
+        </div>
+      </div>
+    </aside>
+    <main class="main" id="main">
+      <header class="top-bar">
+        <div class="top-start">
+          <button id="expand" class="icon-button" type="button" aria-label="Ouvrir la barre latérale" aria-controls="sidebar" title="Ouvrir la barre latérale"><span data-i="panel"></span></button>
+          <span class="mobile-brand">Chat Gemini</span>
+        </div>
+        <div class="modes" role="group" aria-label="Mode de discussion">
+          <button type="button" id="mode-chat" class="mode" data-mode="chat" aria-pressed="true"><span data-i="chat"></span>Chat</button>
+          <button type="button" id="mode-work" class="mode" data-mode="work" aria-pressed="false"><span data-i="work"></span>Work</button>
+        </div>
+        <button type="button" id="key-button" class="api-status" title="Configurer la clé API"><span data-i="key"></span><span>Clé API</span><span id="key-dot" class="status-dot" aria-hidden="true"></span></button>
+      </header>
+      <div class="stage" id="stage">
+        <div class="ambient" aria-hidden="true"></div>
+        <section class="greeting" id="greeting" aria-labelledby="greeting-title">
+          <div class="hero-mark" aria-hidden="true">
+            <img src="/assets/etoile.webp" width="104" height="104" alt="">
+            <span class="mini-spark spark-one"></span><span class="mini-spark spark-two"></span>
+          </div>
+          <h1 id="greeting-title">Bonjour <span>Auguste.</span></h1>
+          <p id="greeting-sub">Par où commence-t-on aujourd’hui&nbsp;?</p>
+        </section>
+        <div class="thread-scroll" id="thread-scroll" hidden>
+          <section class="thread" id="messages" aria-label="Messages de la discussion"></section>
+        </div>
+        <div class="compose-area" id="compose-area">
+          <form id="composer" class="composer">
+            <div class="pending-files" id="pending-files" hidden></div>
+            <label for="prompt" class="sr-only">Ton message</label>
+            <textarea id="prompt" rows="1" placeholder="Écris un message à Chat Gemini…" spellcheck="true"></textarea>
+            <div class="composer-tools">
+              <div class="composer-left">
+                <button id="attach" class="tool-button attach" type="button" title="Joindre un fichier" aria-label="Joindre un fichier"><span data-i="plus"></span></button>
+                <button id="microphone" class="tool-button" type="button" title="Dicter un message" aria-label="Dicter un message" hidden><span data-i="mic"></span></button>
+                <input id="file-input" type="file" multiple accept="image/png,image/jpeg,image/webp,application/pdf,text/plain,.txt,.md" hidden>
+              </div>
+              <div class="composer-right">
+                <button id="model-toggle" type="button" class="model-toggle" aria-haspopup="menu" aria-controls="model-menu" aria-expanded="false"><span class="model-spark" data-i="spark"></span><span id="model-name">Gemini 3.8 Flash</span><span class="chevron" data-i="down"></span></button>
+                <button id="send" class="send" type="submit" title="Envoyer" aria-label="Envoyer"><span data-i="up"></span></button>
+              </div>
+            </div>
+          </form>
+          <div class="suggestions" id="suggestions" aria-label="Suggestions pour commencer"></div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <div class="model-menu" id="model-menu" role="menu" aria-label="Choisir un modèle" hidden><p>Choisir un modèle</p><div id="model-options" role="none"></div></div>
+  <dialog id="settings-dialog" class="dialog" aria-labelledby="settings-title">
+    <form id="settings-form">
+      <div class="dialog-head"><div class="dialog-icon"><span data-i="key"></span></div><button type="button" class="icon-button" data-close title="Fermer" aria-label="Fermer"><span data-i="x"></span></button></div>
+      <h2 id="settings-title">Paramètres</h2>
+      <p class="dialog-lead">Connecte Chat Gemini à ton compte Google AI Studio.</p>
+      <label for="api-key" class="field-label">Clé API Gemini</label>
+      <div class="password-wrap"><input id="api-key" type="password" autocomplete="off" spellcheck="false" autocapitalize="none" placeholder="Colle ta clé API"><button type="button" id="show-key" class="icon-button" title="Afficher la clé" aria-label="Afficher la clé"><span data-i="eye"></span></button></div>
+      <a class="studio-link" href="https://aistudio.google.com/apikey" target="_blank" rel="noreferrer">Obtenir une clé sur Google AI Studio <span data-i="up-right"></span></a>
+      <label class="remember"><input type="checkbox" id="remember-key"><span>Mémoriser sur cet appareil</span></label>
+      <p class="field-help">Par défaut, la clé est conservée pour cet onglet. Elle transite par ton site Vercel à chaque envoi vers Google.</p>
+      <p id="settings-error" role="alert" class="form-error" hidden></p>
+      <div class="dialog-actions"><button class="text-button danger-text" id="forget-key" type="button" hidden>Oublier la clé</button><button class="primary-button" type="submit">Enregistrer</button></div>
+    </form>
+  </dialog>
+  <dialog id="search-dialog" class="dialog search-dialog" aria-labelledby="search-title">
+    <div class="dialog-head"><h2 id="search-title">Rechercher</h2><button type="button" class="icon-button" data-close aria-label="Fermer"><span data-i="x"></span></button></div>
+    <label class="search-field"><span data-i="search"></span><input id="search-input" type="search" autocomplete="off" placeholder="Rechercher dans les discussions…" aria-label="Rechercher dans les discussions"></label>
+    <div id="search-results" class="search-results"></div>
+  </dialog>
+  <dialog id="delete-dialog" class="dialog" aria-labelledby="delete-title">
+    <h2 id="delete-title">Supprimer cette discussion&nbsp;?</h2>
+    <p class="dialog-lead" id="delete-name"></p>
+    <div class="dialog-actions"><button type="button" class="text-button" data-close>Annuler</button><button type="button" id="delete-confirm" class="primary-button delete-button">Supprimer</button></div>
+  </dialog>
+  <div id="toast" class="toast" role="status" hidden></div>
+</body>
+</html>
